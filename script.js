@@ -1,26 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const products = [
-        {
-            name: 'Óleo Motor 5W30',
-            image: 'https://placehold.co/300x300/ffffff/000000?text=Produto+1'
-        },
-        {
-            name: 'Óleo Motor 15W40',
-            image: 'https://placehold.co/300x300/ffffff/000000?text=Produto+2'
-        },
-        {
-            name: 'Óleo Câmbio Manual',
-            image: 'https://placehold.co/300x300/ffffff/000000?text=Produto+3'
-        },
-        {
-            name: 'Fluido de Freio DOT 4',
-            image: 'https://placehold.co/300x300/ffffff/000000?text=Produto+4'
-        }
-    ];
 
-    const carousel = document.querySelector('.carousel');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+const productsXmMaximumFuelPower =[
+    {
+        name: 'Estabilizador para Veículo Flex',
+        image: './images/xmmaximum-fuel-power/estabilizador-flex-100mL.jpg'
+    },
+    {
+        name: 'Óleo Diesel 200 mL',
+        image: './images/xmmaximum-fuel-power/diesel-200mL.jpg'
+    },
+    {
+        name: 'Óleo Diesel 1L',
+        image: './images/xmmaximum-fuel-power/diesel-1L.jpg'
+    },
+    {
+        name: 'Óleo Diesel 20L',
+        image: './images/xmmaximum-fuel-power/diesel-20L.jpg'
+    },
+];
+const productsXmTec = [
+    {
+        name: 'Friction Low',
+        image: './images/xm-tec/friction-low.jpg'
+    },
+    {
+        name: 'Friction Low Moto',
+        image: './images/xm-tec/friction-low-moto.jpg'
+    },
+    {
+        name: 'Smokeless',
+        image: './images/xm-tec/smokeless.jpg'
+    },
+];
+const productsXmRadWater =[
+    {
+        name: 'Água Desmineralizadora',
+        image: './images/xm-rad-water/agua-desmineralizadora.jpg'
+    },
+    {
+        name: 'Aditivo Azul',
+        image: './images/xm-rad-water/aditivo-azul.jpg'
+    },
+    {
+        name: 'Aditivo Verde',
+        image: './images/xm-rad-water/aditivo-verde.jpg'
+    },
+    {
+        name: 'Aditivo Rosa',
+        image: './images/xm-rad-water/aditivo-rosa.jpg'
+    },
+];
+
+
+
+ function mountCarousel(products, id){
+
+    const container = document.getElementById(id);
+    
+    const carousel = container.querySelector('.carousel');
+    const prevBtn = container.querySelector('.prev-btn');
+    const nextBtn = container.querySelector('.next-btn');
 
     let currentIndex = 0;
 
@@ -52,13 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex = (currentIndex - 1 + products.length) % products.length;
         updateCarousel();
     }
-
+    renderCarousel ();
     nextBtn.addEventListener('click', showNext);
     prevBtn.addEventListener('click', showPrev);
 
-    renderCarousel();
-
     window.addEventListener('resize', () => {
-        updateCarousel();
-    });
+        updateCarousel()});
+ }
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+mountCarousel(productsXmMaximumFuelPower, 'car-xm-maximum-fuel-power');
+mountCarousel(productsXmRadWater, 'car-xm-rad-water');
+mountCarousel(productsXmTec, 'car-xm-tec');
+
+
 });

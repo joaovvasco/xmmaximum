@@ -1,0 +1,43 @@
+.social-container {
+    font-family: Arial, sans-serif;
+    display: flex; /* Para centralizar os botões */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Para ocupar a altura total da viewport */
+    margin: 0;
+    background-color: #f0f0f0;
+    gap: 20px; /* Espaço entre os botões */
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-button i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos específicos para o Instagram */
+.instagram-button {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Estilos específicos para o YouTube */
+.youtube-button {
+    background-color: #FF0000; /* Vermelho do YouTube */
+}

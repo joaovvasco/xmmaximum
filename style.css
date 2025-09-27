@@ -45,6 +45,11 @@ main {
     border-radius: 10px;
 }
 
+img{
+    width:300px;
+    height: 300px;
+}
+
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
