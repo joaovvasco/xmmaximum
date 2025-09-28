@@ -5,6 +5,10 @@ const productsXmMaximumFuelPower =[
         image: './images/xmmaximum-fuel-power/estabilizador-flex-100mL.jpg'
     },
     {
+        name: 'Estabilizador Marcha',
+        image: './images/xmmaximum-fuel-power/estabilizador-marcha.jpg'
+    },
+    {
         name: 'Óleo Diesel 200 mL',
         image: './images/xmmaximum-fuel-power/diesel-200mL.jpg'
     },
@@ -13,8 +17,20 @@ const productsXmMaximumFuelPower =[
         image: './images/xmmaximum-fuel-power/diesel-1L.jpg'
     },
     {
+        name: 'Óleo Diesel 5L',
+        image: './images/xmmaximum-fuel-power/diesel-5L.jpg'
+    },
+    {
         name: 'Óleo Diesel 20L',
         image: './images/xmmaximum-fuel-power/diesel-20L.jpg'
+    },
+    {
+        name: 'Óleo Diesel 200L',
+        image: './images/xmmaximum-fuel-power/diesel-200L.jpg'
+    },
+    {
+        name: 'Óleo Diesel 1000L',
+        image: './images/xmmaximum-fuel-power/diesel-1000L.jpg'
     },
 ];
 const productsXmTec = [
@@ -37,16 +53,16 @@ const productsXmRadWater =[
         image: './images/xm-rad-water/agua-desmineralizadora.jpg'
     },
     {
-        name: 'Aditivo Azul',
-        image: './images/xm-rad-water/aditivo-azul.jpg'
-    },
-    {
         name: 'Aditivo Verde',
         image: './images/xm-rad-water/aditivo-verde.jpg'
     },
     {
-        name: 'Aditivo Rosa',
-        image: './images/xm-rad-water/aditivo-rosa.jpg'
+        name: 'Aditivo Rosa Pronto Uso',
+        image: './images/xm-rad-water/aditivo-rosa-pronto-uso.jpg'
+    },
+    {
+        name: 'Aditivo Rosa Concentrado',
+        image: './images/xm-rad-water/aditivo-rosa-concentrado.jpg'
     },
 ];
 
