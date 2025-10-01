@@ -66,8 +66,6 @@ const productsXmRadWater =[
     },
 ];
 
-
-
  function mountCarousel(products, id){
 
     const container = document.getElementById(id);

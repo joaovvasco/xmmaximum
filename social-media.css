@@ -9,6 +9,11 @@
     gap: 20px; /* Espaço entre os botões */
 }
 
+.social-btn { display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:6px 8px; border-radius:6px; }
+.social-btn--instagram { /* estilos visuais se quiser */ }
+.social-btn--youtube { /* estilos visuais se quiser */ }
+.sr-only { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+
 .social-button {
     display: inline-flex;
     align-items: center;
