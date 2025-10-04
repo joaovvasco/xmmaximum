@@ -1,0 +1,14 @@
+.product {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+

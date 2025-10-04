@@ -1,23 +1,23 @@
-import {type IProduct} from '../components/carousel/Carousel'
+import {type IProduct} from './ItemProduct'
 
 
-import estabilizadorFlex100ml from '../assets/xmmaximum-fuel-power/estabilizador-flex-100ml.jpg'
-import estabilizadorMarcha from '../assets/xmmaximum-fuel-power/estabilizador-marcha.jpg'
-import diesel200mL from '../assets/xmmaximum-fuel-power/diesel-200mL.jpg'
-import diesel1L from '../assets/xmmaximum-fuel-power/diesel-1L.jpg'
-import diesel5L from '../assets/xmmaximum-fuel-power/diesel-5L.jpg' 
-import diesel20L from '../assets/xmmaximum-fuel-power/diesel-20L.jpg'
-import diesel1000L from '../assets/xmmaximum-fuel-power/diesel-1000L.jpg'
-import diesel200L from '../assets/xmmaximum-fuel-power/diesel-200L.jpg'
+import estabilizadorFlex100ml from '../../../assets/xmmaximum-fuel-power/estabilizador-flex-100ml.jpg'
+import estabilizadorMarcha from '../../../assets/xmmaximum-fuel-power/estabilizador-marcha.jpg'
+import diesel200mL from '../../../assets/xmmaximum-fuel-power/diesel-200mL.jpg'
+import diesel1L from '../../../assets/xmmaximum-fuel-power/diesel-1L.jpg'
+import diesel5L from '../../../assets/xmmaximum-fuel-power/diesel-5L.jpg' 
+import diesel20L from '../../../assets/xmmaximum-fuel-power/diesel-20L.jpg'
+import diesel1000L from '../../../assets/xmmaximum-fuel-power/diesel-1000L.jpg'
+import diesel200L from '../../../assets/xmmaximum-fuel-power/diesel-200L.jpg'
 
-import frictionLow from '../assets/xm-tec/friction-low.jpg'
-import frictionLowMoto from '../assets/xm-tec/friction-low-moto.jpg'
-import smokeless from '../assets/xm-tec/smokeless.jpg'
+import frictionLow from '../../../assets/xm-tec/friction-low.jpg'
+import frictionLowMoto from '../../../assets/xm-tec/friction-low-moto.jpg'
+import smokeless from '../../../assets/xm-tec/smokeless.jpg'
 
-import aguaDesmineralizadora from '../assets/xm-rad-water/agua-desmineralizadora.jpg'
-import aditivoVerde from '../assets/xm-rad-water/aditivo-verde.jpg'
-import aditivoRosaConcentrado from '../assets/xm-rad-water/aditivo-rosa-concentrado.jpg'
-import aditivoRosaProntoUso from '../assets/xm-rad-water/aditivo-rosa-pronto-uso.jpg'
+import aguaDesmineralizadora from '../../../assets/xm-rad-water/agua-desmineralizadora.jpg'
+import aditivoVerde from '../../../assets/xm-rad-water/aditivo-verde.jpg'
+import aditivoRosaConcentrado from '../../../assets/xm-rad-water/aditivo-rosa-concentrado.jpg'
+import aditivoRosaProntoUso from '../../../assets/xm-rad-water/aditivo-rosa-pronto-uso.jpg'
 
 export default function useProducts() {
     const xmFuelPower:IProduct[] = [
@@ -26,7 +26,9 @@ export default function useProducts() {
                 image: estabilizadorFlex100ml
             },
             {
-                name: 'Estabilizador Marcha',
+                name: 'Flex Moto 50 mL',
+                model: 'CX 16X50ML',
+                price: 15.00,
                 image: estabilizadorMarcha
             },
             {
