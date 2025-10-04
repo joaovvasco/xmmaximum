@@ -1,7 +1,7 @@
 import {type IProduct} from './ItemProduct'
 
 
-import estabilizadorFlex100ml from '../../../assets/xmmaximum-fuel-power/estabilizador-flex-100ml.jpg'
+import estabilizadorFlex100ml from '../../../assets/xmmaximum-fuel-power/estabilizador-flex-100mL.jpg'
 import estabilizadorMarcha from '../../../assets/xmmaximum-fuel-power/estabilizador-marcha.jpg'
 import diesel200mL from '../../../assets/xmmaximum-fuel-power/diesel-200mL.jpg'
 import diesel1L from '../../../assets/xmmaximum-fuel-power/diesel-1L.jpg'
