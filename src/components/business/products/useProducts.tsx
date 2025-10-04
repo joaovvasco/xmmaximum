@@ -24,49 +24,41 @@ export default function useProducts() {
             {
                 name: 'Flex 100mL',
                 model: 'CX 30X100ML',
-                price: 22.00,
                 image: estabilizadorFlex100ml
             },
             {
                 name: 'Flex Moto 50mL',
                 model: 'CX 16X50ML',
-                price: 15.00,
                 image: estabilizadorMarcha
             },
             {
                 name: 'Diesel 200 mL',
                 model: 'CX 30X200ML',
-                price: 35.00,
                 image: diesel200mL
             },
             {
                 name: 'Diesel 1L',
                 model: 'CX 12X1L',
-                price: 145.00,
                 image: diesel1L
             },
             {
                 name: 'Diesel 5L',
                 model: 'CX4X5L',
-                price: 550.00,
                 image: diesel5L
             },
             {
                 name: 'Diesel 20L',
                 model: 'CX 1X20L',
-                price: 2200.00,
                 image: diesel20L
             },
             {
                 name: 'Diesel 200L',
                 model: 'TB 200LTS',
-                price: 20990.00,
                 image: diesel200L
             },
             {
                 name: 'Diesel 1000L',
                 model: 'CTN 1.000LTS',
-                price: 119990.00,
                 image: diesel1000L
             },
         ];
@@ -75,19 +67,16 @@ export default function useProducts() {
             {
                 name: 'XMTEC Friction Low 200mL',
                 description: 'Condicionador de Metais',
-                price: 39.90,
                 image: frictionLow
             },
             {
                 name: 'XMTEC Friction Low Moto 50mL',
                 description: 'Condicionador de Metais',
-                price: 15.00,
                 image: frictionLowMoto
             },
             {
                 name: 'XMTEC Smokeless 500mL',
                 description: 'Redutor de fumaça',
-                price: 29.90,
                 image: smokeless
             },
         ];
@@ -95,25 +84,21 @@ export default function useProducts() {
         const xmRadWater:IProduct[] = [
             {
                 name: 'Água Desmineralizada 1L',
-                price: 8.40,
                 image: aguaDesmineralizadora
             },
             {
                 name: 'Aditivo Verde Pronto Uso 1L',
                 description: 'Máxima proteção para o motor, anti-corrosivo e orgânico',
-                price: 9.90,
                 image: aditivoVerde
             },
             {
                 name: 'Aditivo Rosa Pronto Uso 1L',
                 description: 'Máxima proteção para o motor, anti-corrosivo e orgânico',
-                price: 9.90,
                 image: aditivoRosaProntoUso
             },
             {
                 name: 'Aditivo Rosa Concentrado 1L',
                 description: 'Máxima proteção para o motor, anti-corrosivo e orgânico',
-                price: 15.00,
                 image: aditivoRosaConcentrado
             },
         ]
