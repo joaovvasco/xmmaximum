@@ -4,6 +4,7 @@ import './App.css'
 import useProducts from './collections/useProducts.tsx'
 import Carousel from './components/carousel/Carousel.tsx';
 import { InstagramButton, WhatsappButton, YoutubeButton } from './components/buttons/SocialButton.tsx';
+import Sidebar from './components/sidebars/SideBar.tsx';
 
 function App() {
   const products =  useProducts();
@@ -20,16 +21,15 @@ function App() {
         <Carousel products={products.xmRadWater} title='XM Rad Water' />
         <Carousel products={products.xmTec} title='XM Tec' />
       </main>
-
-       <div style={ {display: 'flex', flexDirection: 'column'}}>
-          <YoutubeButton contact='@xmmaximum' name='Canal Youtube XM Maximum' style={{bottom: '160px'}}/>
-          <InstagramButton contact='xmmaximum.oficial' name='Instagram XM Maximum' style={{bottom: '90px'}}/>
-          <WhatsappButton 
-            contact='556392162709' 
-            name='Contato XM Maximum de Vendas'
-            message='Olá! Gostaria saber melhor dos produtos XM Maximum.'
-          />
-        </div>
+      <Sidebar>
+        <YoutubeButton contact='@xmmaximum' name='Canal Youtube XM Maximum' />
+        <InstagramButton contact='xmmaximum.oficial' name='Instagram XM Maximum' />
+        <WhatsappButton 
+          contact='556392162709' 
+          name='Contato XM Maximum de Vendas'
+          message='Olá! Gostaria saber melhor dos produtos XM Maximum.'
+        />
+      </Sidebar>
     </>
   )
 }
