@@ -22,28 +22,38 @@ const SocialButton: React.FC<ISocialMedia & ISocialMediaInfo & React.HTMLAttribu
     </>
 }
 
-export const WhatsappButton:React.FC<ISocialMediaInfo & React.HTMLAttributes<HTMLElement>> = ({ href, alt}) => {
+interface IContact {
+    contact: string
+    name: string
+}
+
+interface IWhatsappMessage{
+    message?: string
+}
+
+export const WhatsappButton:React.FC<IContact & IWhatsappMessage & React.HTMLAttributes<HTMLElement>> = ({ contact, name, message}) => {
+    
     return <SocialButton
         image={whatsapp}
-        href={href}
-        alt={alt}
+        href={`https://wa.me/${contact + (message ? `?text=${encodeURIComponent(message)}` : '')}`}
+        alt={name}
     />
 }
 
-export const InstagramButton: React.FC<ISocialMediaInfo & React.HTMLAttributes<HTMLElement>> = ({ href, alt, style}) => {
+export const InstagramButton: React.FC<IContact & React.HTMLAttributes<HTMLElement>> = ({ contact, name, style}) => {
     return <SocialButton
         image={instagram}
-        href={href}
-        alt= {alt}
+        href={`https://www.instagram.com/${contact}`}
+        alt= {name}
         style={style}
     />
 }
 
-export const YoutubeButton: React.FC<ISocialMediaInfo & React.HTMLAttributes<HTMLElement>> = ({ href, alt, style}) => {
+export const YoutubeButton: React.FC<IContact & React.HTMLAttributes<HTMLElement>> = ({ contact, name, style}) => {
     return <SocialButton
         image={youtube}
-        href={href}
-        alt= {alt}
+        href={`https://www.youtube.com/${contact}`}
+        alt= {name}
         style={style}
     />
 }

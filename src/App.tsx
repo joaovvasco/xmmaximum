@@ -22,9 +22,13 @@ function App() {
       </main>
 
        <div style={ {display: 'flex', flexDirection: 'column'}}>
-          <YoutubeButton href='https://www.youtube.com/@xmmaximum' alt='Canal Youtube XM Maximum' style={{bottom: '160px'}}/>
-          <InstagramButton href='https://www.instagram.com/xmmaximum.oficial/' alt='Instagram XM Maximum' style={{bottom: '90px'}}/>
-          <WhatsappButton href='https://wa.me/556392162709' alt='Contato XM Maximum de Vendas'/>
+          <YoutubeButton contact='@xmmaximum' name='Canal Youtube XM Maximum' style={{bottom: '160px'}}/>
+          <InstagramButton contact='xmmaximum.oficial' name='Instagram XM Maximum' style={{bottom: '90px'}}/>
+          <WhatsappButton 
+            contact='556392162709' 
+            name='Contato XM Maximum de Vendas'
+            message='Olá! Gostaria saber melhor dos produtos XM Maximum.'
+          />
         </div>
     </>
   )
