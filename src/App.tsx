@@ -13,6 +13,21 @@ function App() {
   const xmRadWater = products.xmRadWater
   const xmTec = products.xmTec
   
+  const xmLines = [
+    {
+      name: 'XM Fuel Power',
+      products: xmFuelPower
+    },
+    {
+      name: 'XM Rad Water',
+      products: xmRadWater
+    },
+    {
+      name: 'XM Tec',
+      products: xmTec
+    }
+  ]
+
   return (
     <>
       <header>
@@ -21,21 +36,13 @@ function App() {
       
       <main>
         <h2>Conheça nossos produtos</h2>
-        <Carousel title='XM Fuel Power' qtd={xmFuelPower.length}>
-          {xmFuelPower.map((product) => (
-                        <ItemProduct {...product} />
-                    ))}
-        </Carousel>
-        <Carousel title='XM Rad Water' qtd={xmRadWater.length}>
-          {xmRadWater.map((product) => (
-                        <ItemProduct {...product} />
-                    ))}
-        </Carousel>
-        <Carousel title='XM Tec' qtd={xmTec.length}>
-          {xmTec.map((product) => (
-                        <ItemProduct {...product} />
-                    ))}
-        </Carousel>
+        {xmLines.map((line) => (
+          <Carousel title={line.name} qtd={line.products.length}>
+            {line.products.map((product) => (
+              <ItemProduct {...product} />
+            ))}
+          </Carousel>
+        ))}
       </main>
       <Sidebar>
         <YoutubeButton contact='@xmmaximum' name='Canal Youtube XM Maximum' />
