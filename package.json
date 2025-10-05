@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:dev": "node pre-process.js dev",
-    "build:prod": "node pre-process.js prod",
+    "build:dev": "node process-build.js dev",
+    "build:prod": "node process-build.js prod",
     "lint": "eslint .",
     "preview": "vite preview"
   },
