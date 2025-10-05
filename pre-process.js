@@ -21,7 +21,7 @@ try {
   let indexContent = fs.readFileSync(indexPath, 'utf8');
 
   // 3. Executa a substituição
-  const updatedContent = indexContent.replace('%REACT_APP_ROBOTS_META%', robotsTag);
+  const updatedContent = indexContent.replace('%REACT_APP_ROBOTS_META%', robotsTag).replace('%ENV%', isDev ? 'DEV - ' : '');
 
   // 4. Salva o arquivo temporariamente ou de volta no public/index.html
   fs.writeFileSync(indexPath, updatedContent, 'utf8');
