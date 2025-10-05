@@ -12,3 +12,9 @@
     border-radius: 10px;
 }
 
+@media (max-width: 600px) {
+    .product img{
+        max-width: 70%;
+    }
+}
+
