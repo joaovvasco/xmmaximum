@@ -3,7 +3,7 @@ import './App.css'
 
 import useProducts from './components/business/products/useProducts.tsx'
 import ItemProduct from './components/business/products/ItemProduct.tsx'; 
-import Carousel from './components/Carousel/Carousel.tsx';
+import Carousel from './components/carousel/Carousel.tsx';
 import { InstagramButton, WhatsappButton, YoutubeButton } from './components/buttons/SocialButton.tsx';
 import Sidebar from './components/sidebars/SideBar.tsx';
 
