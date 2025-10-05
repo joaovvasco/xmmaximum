@@ -8,10 +8,7 @@ import { InstagramButton, WhatsappButton, YoutubeButton } from './components/but
 import Sidebar from './components/sidebars/SideBar.tsx';
 
 function App() {
-  const products =  useProducts();
-  const xmFuelPower = products.xmFuelPower
-  const xmRadWater = products.xmRadWater
-  const xmTec = products.xmTec
+  const { xmFuelPower, xmRadWater, xmTec } =  useProducts();
   
   const xmLines = [
     {
