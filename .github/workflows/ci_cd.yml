@@ -31,7 +31,7 @@ jobs:
       - name: Instalar Dependências
         run: npm install
 
-      - name: Build Dev
+      - name: Build DEV
         if: github.ref_name == 'develop'
         run: npm run build:dev
         
@@ -39,31 +39,17 @@ jobs:
         if: github.ref_name == 'main'
         run: npm run build:prod
 
-      - name: Deploy Prod
+      - name: Deploy
         if: github.ref_name == 'main'
+        env:
+          FTP_SERVER_DIR: ${{ github.ref_name == 'develop' && 'dev/' || '' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: dev/
-          protocol: ftp
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            .vscode
-
-      - name: Deploy Dev
-        if: github.ref_name == 'develop'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: dev/
+          server-dir: ${{env.FTP_SERVER_DIR}}
           protocol: ftp
           exclude: |
             **/.git*
