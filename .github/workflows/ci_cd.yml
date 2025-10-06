@@ -63,7 +63,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-directory: /public_html/dev
+          server-dir: dev/
           protocol: ftp
           exclude: |
             **/.git*
