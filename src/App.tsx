@@ -32,7 +32,6 @@ function App() {
       </header>
       
       <main>
-        <h1>XM Maximum</h1>
         <h2>Conheça nossos produtos</h2>
         {xmLines.map((line) => (
           <Carousel title={line.name} qtd={line.products.length}>
