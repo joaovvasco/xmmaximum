@@ -29,8 +29,13 @@ jobs:
       - name: Instalar Dependências
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Build DEV
+        if: github.ref_name == 'develop'
+        run: npm run build:dev
+        
+      - name: Build Prod
+        if: github.ref_name == 'main'
+        run: npm run build:prod
 
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
