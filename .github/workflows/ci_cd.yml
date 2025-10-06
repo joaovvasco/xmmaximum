@@ -42,7 +42,7 @@ jobs:
       - name: Deploy
         if: github.ref_name == 'main'
         env:
-          FTP_SERVER_DIR: ${{ github.ref_name == 'develop' && 'dev/' || '' }}
+          FTP_SERVER_DIR: ${{ github.ref_name == 'develop' && './dev/' || './' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
