@@ -1,0 +1,48 @@
+name: Deploy XM Maximum
+
+on:
+  # 1. Dispara quando uma Pull Request é aberta ou atualizada para estas branches.
+  pull_request:
+    branches:
+      - develop
+      - main
+
+  # 2. Permite que o workflow seja disparado manualmente pela interface do GitHub.
+  workflow_dispatch:
+
+jobs:
+  web-deploy:
+    name: Build e Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # ... os mesmos passos de checkout, setup-node, npm install e build ...
+
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./build/
+          server-directory: /public_html/
+          protocol: ftp
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .vscode
