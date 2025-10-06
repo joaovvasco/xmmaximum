@@ -15,11 +15,17 @@ jobs:
     name: Build e Deploy
     runs-on: ubuntu-latest
 
-     env:
-      FTP_SERVER_DIR: ${{ (github.ref_name == 'main' && '/public_html/') || '/public_html/dev/' }}
-
     steps:
       # ... os mesmos passos de checkout, setup-node, npm install e build ...
+
+      - name: ⚙️ Calcular Diretório de FTP
+        id: set_dir # Define o ID para referenciar o output
+        run: |
+          if [ "${{ github.ref_name }}" == "main" ]; then
+            echo "directory=/public_html/" >> $GITHUB_OUTPUT
+          else
+            echo "directory=/public_html/dev/" >> $GITHUB_OUTPUT
+          fi
 
       - name: Checkout do Código
         uses: actions/checkout@v4
@@ -47,7 +53,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-directory: ${{env.FTP_SERVER_DIR}}
+          server-directory: ${{ steps.set_dir.outputs.directory }}
           protocol: ftp
           exclude: |
             **/.git*
