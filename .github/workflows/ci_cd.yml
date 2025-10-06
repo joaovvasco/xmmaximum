@@ -41,18 +41,18 @@ jobs:
 
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        if: github.ref_name == 'main'
         env:
-          FTP_SERVER_DIR: ${{ github.ref_name == 'main' && '/public_html/' || '/public_html/dev/' }}
-          
+          FTP_SERVER_DIR: /public_html/
+        if: github.ref_name == 'develop'
+        env:
+          FTP_SERVER_DIR: /public_html/dev          
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          if: github.ref_name == 'main'
-          server-directory: '/public_html/'
-          if: github.ref_name == 'develop'
-          server-directory: '/public_html/dev'
+          server-directory: ${{env.FTP_SERVER_DIR}}
           protocol: ftp
           exclude: |
             **/.git*
