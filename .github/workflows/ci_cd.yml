@@ -23,8 +23,10 @@ jobs:
         run: |
           if [ "${{ github.ref_name }}" == "main" ]; then
             echo "directory=/public_html/" >> $GITHUB_OUTPUT
+            echo "prod!!!!!!!!!"
           else
             echo "directory=/public_html/dev/" >> $GITHUB_OUTPUT
+            echo "dev!!!!!!!!!!"
           fi
 
       - name: Checkout do Código
