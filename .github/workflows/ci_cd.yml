@@ -40,13 +40,9 @@ jobs:
         run: npm run build:prod
 
       - name: Deploy
+        env:
+          FTP_SERVER_DIR: ${{ github.ref_name == 'main' && '/public_html/' || '/public_html/dev/' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        if: github.ref_name == 'main'
-        env:
-          FTP_SERVER_DIR: /public_html/
-        if: github.ref_name == 'develop'
-        env:
-          FTP_SERVER_DIR: /public_html/dev          
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
