@@ -41,7 +41,7 @@ jobs:
 
       - name: Deploy
         env:
-          FTP_SERVER_DIR: ${{ github.ref_name == 'main' && '/public_html/' || '/public_html/dev/' }}
+          FTP_SERVER_DIR: ${{ github.ref_name == 'develop' && '/public_html/dev/' || '/public_html/' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
