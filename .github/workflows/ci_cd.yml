@@ -15,6 +15,9 @@ jobs:
     name: Build e Deploy
     runs-on: ubuntu-latest
 
+     env:
+      FTP_SERVER_DIR: ${{ (github.ref_name == 'main' && '/public_html/') || '/public_html/dev/' }}
+
     steps:
       # ... os mesmos passos de checkout, setup-node, npm install e build ...
 
@@ -44,7 +47,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-directory: /public_html/
+          server-directory: ${{env.FTP_SERVER_DIR}}
           protocol: ftp
           exclude: |
             **/.git*
