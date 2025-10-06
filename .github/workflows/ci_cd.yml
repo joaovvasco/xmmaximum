@@ -42,7 +42,7 @@ jobs:
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         env:
-          FTP_SERVER_DIR: ${{ (github.ref_name == 'main' && '/public_html/') || '/public_html/dev/' }}
+          FTP_SERVER_DIR: ${{ github.ref_name == 'main' && '/public_html/' || '/public_html/dev/' }}
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
