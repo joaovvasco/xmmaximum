@@ -16,8 +16,8 @@ interface ISocialMedia{
 
 const SocialButton: React.FC<ISocialMedia & ISocialMediaInfo & React.HTMLAttributes<HTMLElement>> = ({image, alt, href, style, id }) => {
     return <>
-        <a id={id} href={href} target='_blank' className={'button'} style={style}>
-            <img src={image} alt={alt} />
+        <a href={href} target='_blank' className={'button'} style={style}>
+            <img id={id} src={image} alt={alt} />
         </a>
     </>
 }
